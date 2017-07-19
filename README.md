@@ -6,3 +6,11 @@ public/index.html
 
 public/javascripts/code.js
 ```
+
+## How to start
+
+```
+npm install
+
+node start
+```
