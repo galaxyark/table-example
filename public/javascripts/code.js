@@ -15,15 +15,13 @@ const $table = $('#table').bootstrapTable({
     search: true
 });
 
-async function getData() {
+(async function getData() {
     const res = await fetch('/api/data');
     const data = await res.json();
 
     $table.bootstrapTable('load', data);
     return data;
-}
+})()
 
-let data = getData();
-console.log(data);
-console.log(table);
+
 
