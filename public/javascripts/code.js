@@ -1,4 +1,6 @@
-$('#table').bootstrapTable({
+'use strict';
+
+const $table = $('#table').bootstrapTable({
     columns: [{
         field: 'id',
         title: 'Item ID'
@@ -9,15 +11,19 @@ $('#table').bootstrapTable({
         field: 'price',
         title: 'Item Price'
     }],
-    data: [{
-        id: 1,
-        name: 'Item 1',
-        price: '$1'
-    }, {
-        id: 2,
-        name: 'Item 2',
-        price: '$2'
-    }],
     pagination: true,
     search: true
 });
+
+async function getData() {
+    const res = await fetch('/api/data');
+    const data = await res.json();
+
+    $table.bootstrapTable('load', data);
+    return data;
+}
+
+let data = getData();
+console.log(data);
+console.log(table);
+
