@@ -12,5 +12,5 @@ public/javascripts/code.js
 ```
 npm install
 
-node start
+npm start
 ```
